@@ -8,11 +8,14 @@ import App from "./App";
 import * as serviceWorker from "./serviceWorker";
 import client from "./graphql/client";
 import theme from "./style/themes/main";
+import { BrowserRouter as Router } from "react-router-dom";
 
 ReactDOM.render(
   <ApolloProvider client={client}>
     <ThemeProvider theme={theme}>
-      <App />
+      <Router>
+        <App />
+      </Router>
     </ThemeProvider>
   </ApolloProvider>,
   document.getElementById("root")
